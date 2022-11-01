@@ -1,22 +1,26 @@
--- 1.Данный запрос находит отличника: -- 
+-- 1.Данный запрос находит водителя:
+select town from trip_ticket
+Where drivers_id = 1;
 
-select name from progress
-Where score = '5';
 
--- 2. Данный запрос добавляет нового ученика: --
 
-INSERT INTO mydb.student (name, birthdate, telephone_number, adress, class) VALUES ('Булгаков Илья Андреевич', '06.07.2005', '+7(4875)241-55-07205', 'Россия, г. Хасавюрт, Кирова ул., д. 2 кв.107', '9');
+-- 2. Данный запрос находит водителя стажем работы более 5 лет :
+Select name from drivers
+Where driving_experience >5;
 
--- 3. 	Данный запрос выводит название предметов: -- 
 
-Select name from curriculum;
 
--- 4. Данный запрос какой класс у классного руководителя: Островская Александра Федоровна : -- 
+-- 3. 	Данный запрос находит марку машины 5 водителя:
+SELECT brand from autopark
+where Drivers_id = 5;
 
-Select * from teacher
-Where name = 'Островская Александра Фёдоровна';
 
--- 5. Выдает названия предмета, который сдает ученик под уникальным номером  “id”: -- 
 
-SELECT * FROM curriculum
-where Student_id = '1'
+-- 4. Данный запрос добавляет нового оператора 
+INSERT INTO trans_comp.operator (id, name_operator) VALUES ('6', 'Власов Егор Максимович');
+
+
+
+-- 5. Добавляет новую фуру :
+INSERT INTO trans_comp.autopark (id, brand, mileage, tonnage) VALUES ('6', 'Man', '128000', '15');
+
