@@ -2,36 +2,39 @@
 Данная база данных содержит информацию о учениках, учителях , предметах , кабинетах.
 
 # Типовые запросы к базе данных.
-1.**Данный запрос находит отличника:**
+1.**Данный запрос находит водителя:**
 
 ```sql
-select name from progress
-Where score = '5';
+select town from trip_ticket
+Where drivers_id = 1;
+
 ```
 
-2.**Данный запрос добавляет нового ученика:**
+2.** Данный запрос находит водителя стажем работы более 5 лет :**
 
 ```sql
-INSERT INTO mydb.student (name, birthdate, telephone_number, adress, class) VALUES ('Булгаков Илья Андреевич', '06.07.2005', '+7(4875)241-55-07205', 'Россия, г. Хасавюрт, Кирова ул., д. 2 кв.107', '9');
+Select name from drivers
+Where driving_experience >5;
+
 ```
 
-3. **Данный запрос выводит название предметов:**
+3. **Данный запрос находит марку машины 5 водителя:**
 
 ```sql
-Select name from curriculum;
+SELECT brand from autopark
+where Drivers_id = 5;
+
 ```
-4.**Данный запрос какой класс у классного руководителя: Островская Александра Федоровна.**
+4.**Данный запрос добавляет нового оператор.**
 
 ```sql
-Select * from teacher
-Where name = 'Островская Александра Фёдоровна';
+INSERT INTO trans_comp.operator (id, name_operator) VALUES ('6', 'Власов Егор Максимович');
 ```
 
-5.**Выдает названия предмета, который сдает ученик под уникальным номером  “id”:** 
+5.**Добавляет новую фуру:** 
 
 ```sql 
-SELECT * FROM curriculum
-where Student_id = '1'
+INSERT INTO trans_comp.autopark (id, brand, mileage, tonnage) VALUES ('6', 'Man', '128000', '15');
 ```
 
 # Для запуска нужно:
